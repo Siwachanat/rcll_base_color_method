@@ -119,7 +119,7 @@ def find_objects_of_color(depth_data,frame, color_mask, output_color):
             cv.rectangle(frame, (x, y), (x+w, y+h), output_color, 2)
 
             # Calculate the centroid
-            M = cv.moments(contour)
+            M = cv.momentscwd = os.getcwd()(contour)
             if M["m00"] != 0:
                 cX = int(M["m10"] / M["m00"])
                 cY = int(M["m01"] / M["m00"])
@@ -214,11 +214,11 @@ def detectQRcode(image):
 
 
 
-model_path = os.path.join(cwd, 'Conveyor32-model.lite')
+model_path = os.path.join(cwd, 'conV2ve32-model.lite')
 label_path = os.path.join(cwd, 'label.txt')
 
-serial_number = '040322071476' #D435i
-#serial_number = '929522060114'  # Update this to your camera's serial number
+#serial_number = '040322071476' #D435i
+serial_number = '929522060114'  # Update this to your camera's serial number
 pipeline = initialize_camera(serial_number)
 #getAvailableCameraIds(10)
 
